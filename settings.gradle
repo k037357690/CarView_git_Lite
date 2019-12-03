@@ -1,0 +1,1 @@
+include ':app', ':camera2library', ':subproject', ':encoder', ':rtmp', ':rtplibrary', ':rtsp'

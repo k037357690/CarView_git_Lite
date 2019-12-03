@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="330dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:gravity="center"
+    android:orientation="vertical"
+    app:layout_anchorGravity="center_vertical">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:text="Would you like to save this live stream to your device ?"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_no"
+            android:layout_width="165dp"
+            android:layout_height="60dp"
+            android:layout_weight="0.22"
+            android:background="@drawable/button_cancel_newevent"
+            android:text="No"
+            android:textColor="#6b6b76"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_yes"
+            android:layout_width="165dp"
+            android:layout_height="60dp"
+            android:layout_weight="0.21"
+            android:background="@drawable/button_confirm_newevent"
+            android:text="Yes"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>

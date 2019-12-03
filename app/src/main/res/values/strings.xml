@@ -1,0 +1,194 @@
+<resources>
+    <string name="app_name">CarView Puls</string>
+    <string name="register_name">Register</string>
+    <string name="information_name">Account Information</string>
+    <string name="setting_name">Setting</string>
+    <string name="history_search_name">Historical Record</string>
+
+
+    <!-- Strings related to Login -->
+    <string name="login_enter_account">Account</string>
+    <string name="example_email">example@gmail.com</string>
+    <string name="enter_passward">Password</string>
+    <string name="example_pwd">example</string>
+    <string name="login_button">Login</string>
+    <string name="register_button">Register</string>
+    <string name="forget_button">Forget Password</string>
+
+    <!-- Strings related to Register -->
+    <string name="userName">Username</string>
+    <string name="account">Account</string>
+    <string name="email">Email</string>
+    <string name="car_num">License plate number</string>
+    <string name="car_type">Car type</string>
+    <string-array name="car_size_array">
+        <item>Select a car type</item>
+        <item>Large car</item>
+        <item>Medium car</item>
+        <item>Small car</item>
+    </string-array>
+    <!-- Strings related to 子母畫面 -->
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="info">Info</string>
+    <string name="info_description">Information about this video</string>
+    <string name="info_uri" translatable="false">https://peach.blender.org/</string>
+    <string name="fast_forward">Fast forward</string>
+    <string name="fast_rewind">Fast rewind</string>
+    <string name="minimize">Minimize</string>
+    <string name="enter_picture_in_picture">Enter Picture-in-Picture mode</string>
+    <string name="explanation"><![CDATA[
+    This sample demonstrates basic usage of Picture-in-Picture mode for handheld devices.
+    The sample plays a video. The video keeps on playing when the app is turned in to
+    Picture-in-Picture mode. On Picture-in-Picture screen, the app shows an action item to pause or
+    resume the video.
+    ]]></string>
+    <string name="switch_custom">Switch to custom actions example</string>
+    <string name="switch_media_session">Switch to using MediaSession</string>
+    <string name="title_bigbuckbunny">Big Buck Bunny</string>
+
+
+    <!-- String google drive API token -->
+    <string name="Drive_API_key">336826910225-kil5di3eq9j8gkb9m5dudeenviuogk4b.apps.googleusercontent.com</string>
+
+    <!-- Strings related to Menu -->
+    <string name="personal_history">Personal Historical Video</string>
+    <string name="title_activity_main">CarView 2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">User</string>
+    <string name="nav_header_subtitle">E-mail</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="start_Live">Start Live</string>
+    <string name="upload_event">New Event</string>
+    <string name="history_data">Historical Record</string>
+    <string name="introdution">Instructions</string>
+    <string name="law">Terms of Service</string>
+    <string name="accountinform">Account Information</string>
+    <string name="loginout">Log out</string>
+    <string name="accountowner">About Account</string>
+    <string name="nav_account">Account</string>
+    <string name="nav_psd">Password</string>
+    <string name="nav_carnum">carNum</string>
+    <string name="nav_setting">Settings</string>
+    <string name="nav_upload_gdrive">Backup Videos</string>
+
+    <!-- Strings related to History_search -->
+    <string name="date">Date :</string>
+    <string name="select_date">Select Date</string>
+    <string name="time">Time :</string>
+    <string name="select_time">Select Time</string>
+    <string name="search_location">Location :</string>
+    <string name="submit">Submit</string>
+    <string name="title_activity_history_map">Map</string>
+
+
+    <!-- Strings related to Rtmp stream -->
+    <string name="live_start">Start Live</string>
+    <string name="live_stop">Stop Live</string>
+    <string name="start_player">Start Live</string>
+    <string name="stop_player">Stop Live</string>
+    <string name="title_current_location">目前位置</string>
+
+
+    <string name="rtsp_streamer">Custom RTSP</string>
+    <string name="rtmp_streamer">Custom RTMP</string>
+    <string name="default_rtmp">Default RTMP</string>
+    <string name="default_rtsp">Default RTSP</string>
+    <string name="from_file_rtsp">From file RTSP</string>
+    <string name="from_file_rtmp">From file RTMP</string>
+    <string name="surface_mode_rtsp">Surface mode RTSP</string>
+    <string name="surface_mode_rtmp">Surface mode RTMP</string>
+    <string name="texture_mode_rtsp">Texture mode RTSP</string>
+    <string name="texture_mode_rtmp">Texture mode RTMP</string>
+    <string name="display_rtmp">Display RTMP</string>
+    <string name="display_rtsp">Display RTSP</string>
+    <string name="opengl_rtmp">OpenGl RTMP</string>
+    <string name="opengl_rtsp">OpenGl RTSP</string>
+    <string name="cube_test_rtmp">Cube test RTMP</string>
+
+    <string name="tv_select">Select your streamer</string>
+    <string name="hint_rtsp">rtsp://yourendpoint</string>
+    <string name="hint_rtmp">rtmp://yourendpoint</string>
+    <string name="start_button">Start stream</string>
+    <string name="stop_button">Stop stream</string>
+    <string name="switch_camera_button">Switch camera</string>
+    <string name="select_file">Select file</string>
+    <string name="start_record">Start record</string>
+    <string name="stop_record">Stop record</string>
+    <string name="resync_file">ReSync file</string>
+    <!--menu-->
+    <string name="microphone">Microphone</string>
+    <string name="filters">Filters</string>
+    <string name="clear">Clear</string>
+    <string name="grey_scale">Grey scale</string>
+    <string name="negative">Negative</string>
+    <string name="sepia">Sepia</string>
+    <string name="aqua">Aqua</string>
+    <string name="posterize">Posterize</string>
+    <!--gl menu-->
+    <string name="enable_disable_fxaa">enable/disable FXAA</string>
+    <!--filters-->
+    <string name="no_filter">No filter</string>
+    <string name="android_view">Android view</string>
+    <string name="basic_deformation">Basic deformation</string>
+    <string name="beauty">Beauty</string>
+    <string name="blur">Blur</string>
+    <string name="brightness">Brightness</string>
+    <string name="cartoon">Cartoon</string>
+    <string name="color">Color</string>
+    <string name="contrast">Contrast</string>
+    <string name="duotone">Duotone</string>
+    <string name="earlybird">EarlyBird</string>
+    <string name="edge_detection">Edge detection</string>
+    <string name="exposure">Exposure</string>
+    <string name="fire">Fire</string>
+    <string name="gamma">Gamma</string>
+    <string name="gif">Gif</string>
+    <string name="halftone_lines">Halftone lines</string>
+    <string name="image">Image</string>
+    <string name="image_70s">Image 70s</string>
+    <string name="lamoish">Lamoish</string>
+    <string name="money">Money</string>
+    <string name="pixelated">Pixelated</string>
+    <string name="polygonization">Polygonization</string>
+    <string name="rgb_saturate">RGB saturate</string>
+    <string name="ripple">Ripple</string>
+    <string name="rotation">Rotation</string>
+    <string name="saturation">Saturation</string>
+    <string name="surface_filter">Surface filter</string>
+    <string name="rainbow">Rainbow</string>
+    <string name="sharpness">Sharpness</string>
+    <string name="temperature">Temperature</string>
+    <string name="text">Text</string>
+    <string name="zebra">Zebra</string>
+    <!--drawer-->
+    <string name="drawer_title">Options</string>
+    <string name="protocols">Protocol</string>
+    <string name="tcp">TCP</string>
+    <string name="udp">UDP</string>
+    <string name="video">Video</string>
+    <string name="audio">Audio</string>
+    <string name="resolution">Resolution</string>
+    <string name="video_bitrate">Bit rate (on fly)</string>
+    <string name="audio_bitrate">Bit rate</string>
+    <string name="fps">Frequency per econd</string>
+    <string name="orientation">Orientation</string>
+    <string name="hardware_rotation">Hardware rotation</string>
+    <string name="samplerate">Sample Rate</string>
+    <string name="channel">Channel</string>
+    <string name="stereo">Stereo</string>
+    <string name="mono">Mono</string>
+    <string name="echo_canceler">Echo canceler</string>
+    <string name="camera">Camera</string>
+    <string name="wowza_auth">Wowza Auth</string>
+    <string name="wowza_user">User</string>
+    <string name="wowza_password">Password</string>
+    <string name="noise_suppressor">Noise suppressor</string>
+    <string name="title_activity_historical_video_player">historical_video_player</string>
+    <string name="title_activity_recorder_service">RecorderService</string>
+    <string name="title_activity_camera_recorder">CameraRecorder</string>
+
+
+</resources>

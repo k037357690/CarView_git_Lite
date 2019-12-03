@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="330dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:weightSum="10">
+
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="請選擇上傳事件的類別"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <RadioGroup
+        android:id="@+id/event_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="15dp">
+
+        <RadioButton
+            android:id="@+id/radioButton_jam_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@color/transparent"
+            android:drawableLeft="@drawable/custom_jam_radiobutton"
+            android:drawablePadding="40dp"
+            android:drawableRight="@drawable/custom_checkbox"
+            android:layoutDirection="rtl"
+            android:text="塞車事件"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButton_accident_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:button="@color/transparent"
+            android:drawableLeft="@drawable/custom_accident_radiobutton"
+            android:drawablePadding="40dp"
+            android:drawableRight="@drawable/custom_checkbox"
+            android:layoutDirection="rtl"
+            android:text="車禍事件"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButton_roadconstruction_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:button="@color/transparent"
+            android:drawableLeft="@drawable/custom_roadconstruction_radiobutton"
+            android:drawablePadding="40dp"
+            android:drawableRight="@drawable/custom_checkbox"
+            android:layoutDirection="rtl"
+            android:text="施工事件"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="165dp"
+            android:layout_height="60dp"
+            android:layout_weight="0.22"
+            android:background="@drawable/button_cancel_newevent"
+            android:text="取消"
+            android:textColor="#6b6b76"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="165dp"
+            android:layout_height="60dp"
+            android:layout_weight="0.21"
+            android:background="@drawable/button_confirm_newevent"
+            android:text="確認"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

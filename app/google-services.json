@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "889709322795",
+    "firebase_url": "https://arctic-maxim-160906.firebaseio.com",
+    "project_id": "arctic-maxim-160906",
+    "storage_bucket": "arctic-maxim-160906.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889709322795:android:72b5a833b1f322dc",
+        "android_client_info": {
+          "package_name": "com.nclab.carview2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889709322795-ljf64motnovtjjnotb3cjftf6v2p28ca.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nclab.carview2",
+            "certificate_hash": "ac48e9ce051b0e04e5bb2a5a9b32604e141ff7f9"
+          }
+        },
+        {
+          "client_id": "889709322795-7241bu6b89old5jv5ev78darqbh9s6cr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArC7MFKA3InH5on_epuNWmt8HS9I9w5Bo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889709322795-7241bu6b89old5jv5ev78darqbh9s6cr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
