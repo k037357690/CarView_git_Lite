@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -77,28 +78,16 @@ public class LoginActivity extends AppCompatActivity {
         loginPwd_ET = findViewById(R.id.loginPwd);
 
     }
-//
-//    private uploadService.myBinder myBinder;
-//    private ServiceConnection serviceConnection = new ServiceConnection() {
-//        @Override
-//        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-//            myBinder = (uploadService.myBinder) serviceConnection;
-//            myBinder.startUpload();
-//        }
-//
-//        @Override
-//        public void onServiceDisconnected(ComponentName componentName) {
-//
-//        }
-//    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
         if(RecorderService.isActive){
             Intent intent = new Intent(LoginActivity.this, CameraRecorder2.class);
             startActivity(intent);
         }
-
 
         //================================================//
         //=======判斷權限是否打開===========================//
@@ -112,8 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                     1);
         }
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+
 
         //Intent intent = new Intent(this, uploadService.class);
         //this.startService(intent);
@@ -140,28 +128,24 @@ public class LoginActivity extends AppCompatActivity {
 
 
         //按下登入按鈕，寫入資料到偏好設定檔，跳至create_JSON_and_connect_server()//
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(v -> {
+            //記住帳號密碼//
+            //若帳號密碼不是空白且有勾記住，寫入偏好設定檔//
+            if((!loginAccount_ET.getText().toString().equals("")) &&
+                    (!loginPwd_ET.getText().toString().equals(""))){
 
-            @Override
-            public void onClick(View v) {
-                //記住帳號密碼//
-                //若帳號密碼不是空白且有勾記住，寫入偏好設定檔//
-                if((!loginAccount_ET.getText().toString().equals("")) &&
-                        (!loginPwd_ET.getText().toString().equals(""))){
+                //打開Editor才可以編輯偏好設定檔
+                SharedPreferences.Editor editor = mPrefs.edit();
 
-                    //打開Editor才可以編輯偏好設定檔
-                    SharedPreferences.Editor editor = mPrefs.edit();
-
-                    //從輸入欄取得資料寫入偏好設定檔
-                    //偏好設定檔中，資料的標題為自行設定，如："pref_account"
-                    editor.putString("pref_account", loginAccount_ET.getText().toString())
-                            .putString("pref_pass", loginPwd_ET.getText().toString())
-                            .apply();
-                }
-
-                create_JSON_and_connect_server();
-
+                //從輸入欄取得資料寫入偏好設定檔
+                //偏好設定檔中，資料的標題為自行設定，如："pref_account"
+                editor.putString("pref_account", loginAccount_ET.getText().toString())
+                        .putString("pref_pass", loginPwd_ET.getText().toString())
+                        .apply();
             }
+
+            create_JSON_and_connect_server();
+
         });
 
     }

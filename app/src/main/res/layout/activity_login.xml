@@ -10,14 +10,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="135dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/white"
         app:srcCompat="@drawable/carview2x" />
 
     <EditText
@@ -25,7 +27,7 @@
         android:layout_width="328dp"
         android:layout_height="48dp"
         android:ems="10"
-        android:hint="帳號 : example_email"
+        android:hint="帳號"
         android:inputType="textEmailAddress"
         android:singleLine="true"
         android:textAlignment="viewStart"
@@ -41,7 +43,7 @@
         android:layout_marginBottom="6dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="密碼 : ..........."
+        android:hint="密碼"
         android:inputType="textPassword"
         android:textSize="15sp"
         android:visibility="visible"
@@ -58,8 +60,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
-        android:layout_marginTop="60dp"
-        android:orientation="vertical">
+        android:layout_marginTop="80dp"
+        android:orientation="vertical"
+        android:background="@color/white">
 
         <Button
             android:id="@+id/welcomelogin"
@@ -98,7 +101,8 @@
             app:layout_constraintHorizontal_bias="0.839"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginPwd"
-            app:layout_constraintVertical_bias="0.454" />
+            app:layout_constraintVertical_bias="0.454"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 
@@ -112,6 +116,7 @@
         android:layout_weight="1"
         android:background="#00ffffff"
         android:gravity="top"
-        android:text="忘記密碼？" />
+        android:text="忘記密碼？"
+        android:visibility="invisible"/>
 
 </LinearLayout>

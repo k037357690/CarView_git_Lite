@@ -3,17 +3,16 @@ package com.nclab.carview2;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -39,11 +38,22 @@ public class CameraRecorder2 extends AppCompatActivity implements SurfaceHolder.
     private String Status;
     private JSONObject jsonstatus = null;
 
+    //private Button btnStart;
+
 
     private static final String PREFS_ACCOUNT_NAME = "prefsFile_account_name";
     private SharedPreferences mPrefs;
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_camera_recorder);
+
+        Button btnStart = findViewById(R.id.Start_Stop_Service);
+
+        if(RecorderService.mRecordingStatus){
+            btnStart.setBackgroundResource(R.drawable.stop);
+
+        }
 
         mPrefs = getSharedPreferences("prefsFile_account_name", MODE_PRIVATE);
         getPreferencesData();
@@ -71,69 +81,78 @@ public class CameraRecorder2 extends AppCompatActivity implements SurfaceHolder.
         }
 
         System.out.print("IN_CAMERARECODER onCreate");
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camera_recorder);
+
 
         mSurfaceView = findViewById(R.id.surfaceView2);
         mSurfaceHolder = mSurfaceView.getHolder();
         mSurfaceHolder.addCallback(this);
         mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+
         Button btnSignout = findViewById(R.id.signout);
         btnSignout.setOnClickListener(v -> {
+            if(!RecorderService.mRecordingStatus){
+                String logout_url = "http://140.115.158.87:3000/android/logout";
 
-            String logout_url = "http://140.115.158.87:3000/android/logout";
+                JSONObject logout_json = new JSONObject();
 
-            JSONObject logout_json = new JSONObject();
+                try {
+                    logout_json.put("User_account", self_account);
+                    logout_json.put("User_name", self_username);
+                    logout_json.put("User_lat", lat);
+                    logout_json.put("User_lng", lng);
 
-            try {
-                logout_json.put("User_account", self_account);
-                logout_json.put("User_name", self_username);
-                logout_json.put("User_lat", lat);
-                logout_json.put("User_lng", lng);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
-            } catch (JSONException e) {
-                e.printStackTrace();
+                JsonObjectRequest mJsonObjectRequest = new JsonObjectRequest(Request.Method.POST, logout_url, logout_json,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            //接收伺服器回傳的其他使用者資料
+                            public void onResponse(JSONObject response) {
+                                Log.e("online", response.toString());
+
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.e("err", error.toString());
+                            }
+                        }
+                );
+                Volley.newRequestQueue(CameraRecorder2.this).add(mJsonObjectRequest);
+
+                Intent Login_intent = new Intent();
+                Login_intent.setClass(CameraRecorder2.this,LoginActivity.class);
+                startActivity(Login_intent);
+            }else{
+                Toast.makeText(getApplicationContext(), "請先停止錄影，再按登出", Toast.LENGTH_SHORT).show();
             }
 
-            JsonObjectRequest mJsonObjectRequest = new JsonObjectRequest(Request.Method.POST, logout_url, logout_json,
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        //接收伺服器回傳的其他使用者資料
-                        public void onResponse(JSONObject response) {
-                            Log.e("online", response.toString());
-
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Log.e("err", error.toString());
-                        }
-                    }
-            );
-            Volley.newRequestQueue(CameraRecorder2.this).add(mJsonObjectRequest);
-
-            Intent Login_intent = new Intent();
-            Login_intent.setClass(CameraRecorder2.this,LoginActivity.class);
-            startActivity(Login_intent);
 
 
         });
 
-        Button btnStart = findViewById(R.id.StartService);
         btnStart.setOnClickListener(v -> {
 
-            System.out.print("IN_CAMERARECODER botton onClick");
-            startService();
+            if(!RecorderService.mRecordingStatus){
+                System.out.print("IN_CAMERARECODER botton onClick");
+                btnStart.setBackgroundResource(R.drawable.stop);
+                startService();
 
+            }else {
+                btnStart.setBackgroundResource(R.drawable.icon_play);
+                stopService();
+            }
 
         });
 
-        Button btnStop = findViewById(R.id.StopService);
-        btnStop.setOnClickListener(v -> {
-            //wakeLock.release();
-            stopService();
-        });
+//        Button btnStop = findViewById(R.id.StopService);
+//        btnStop.setOnClickListener(v -> {
+//            //wakeLock.release();
+//
+//        });
 
     }
 //禁止系統返回鍵
